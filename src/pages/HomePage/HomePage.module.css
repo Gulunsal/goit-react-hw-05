@@ -1,0 +1,23 @@
+.homePage {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.loading {
+  color: #007bff;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.noMovies {
+  color: gray;
+  font-size: 16px;
+  margin-top: 20px;
+}
