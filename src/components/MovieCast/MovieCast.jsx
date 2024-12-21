@@ -1,33 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCredits } from '../../services/api';
+import styles from './MovieCast.module.css';
 
 const MovieCast = () => {
-  const { movieId } = useParams();
+  const { movieId } = useParams(); // URL'deki movieId'yi alıyoruz
   const [cast, setCast] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchCast = async () => {
+    const getMovieCredits = async () => {
       try {
         const data = await fetchMovieCredits(movieId);
         setCast(data);
-      } catch (error) {
-        console.error('Cast yüklenirken hata oluştu:', error);
+      } catch (err) {
+        setError('Failed to fetch cast information.');
       }
     };
-    fetchCast();
+
+    getMovieCredits();
   }, [movieId]);
 
-  if (!cast.length) return <p>No cast information available.</p>;
+  if (error) {
+    return <p className={styles.error}>{error}</p>;
+  }
+
+  if (!cast.length) {
+    return <p className={styles.noData}>No cast information available.</p>;
+  }
 
   return (
-    <ul>
+    <ul className={styles.castList}>
       {cast.map((actor) => (
-        <li key={actor.cast_id}>
+        <li key={actor.id} className={styles.castItem}>
           <img
             src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
             alt={actor.name}
-            width="100"
+            className={styles.castImage}
           />
           <p>{actor.name}</p>
           <p>Character: {actor.character}</p>

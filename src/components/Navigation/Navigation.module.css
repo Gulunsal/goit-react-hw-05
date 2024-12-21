@@ -1,25 +1,23 @@
 .navigation {
   display: flex;
   justify-content: center;
+  gap: 20px;
   background-color: #007bff;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
+  padding: 15px;
 }
 
-.navigation a {
+.link {
   color: white;
   text-decoration: none;
-  margin: 0 1rem;
   font-size: 18px;
-  font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.navigation a:hover {
-  color: #ffdd57;
+.link:hover {
+  color: #ffcc00;
 }
 
-.navigation a.active {
-  text-decoration: underline;
+.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ffcc00;
 }

@@ -5,10 +5,20 @@ import styles from './Navigation.module.css';
 const Navigation = () => {
   return (
     <nav className={styles.navigation}>
-      <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : '')}>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? `${styles.link} ${styles.active}` : styles.link
+        }
+      >
         Home
       </NavLink>
-      <NavLink to="/movies" className={({ isActive }) => (isActive ? styles.active : '')}>
+      <NavLink
+        to="/movies"
+        className={({ isActive }) =>
+          isActive ? `${styles.link} ${styles.active}` : styles.link
+        }
+      >
         Movies
       </NavLink>
     </nav>
