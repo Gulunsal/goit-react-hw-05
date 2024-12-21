@@ -11,7 +11,7 @@ const Navigation = () => {
           isActive ? `${styles.link} ${styles.active}` : styles.link
         }
       >
-        Home
+        Ana Sayfa
       </NavLink>
       <NavLink
         to="/movies"
@@ -19,7 +19,7 @@ const Navigation = () => {
           isActive ? `${styles.link} ${styles.active}` : styles.link
         }
       >
-        Movies
+        Filmler
       </NavLink>
     </nav>
   );

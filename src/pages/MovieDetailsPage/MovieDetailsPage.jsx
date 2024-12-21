@@ -41,14 +41,14 @@ const MovieDetailsPage = () => {
       </div>
       <div className={styles.additionalInfo}>
         <h3>Additional Information</h3>
-        <ul>
-          <li>
-            <Link to={`/movies/${movieId}/cast`}>Cast</Link> {/* Mutlak yol */}
-          </li>
-          <li>
-            <Link to={`/movies/${movieId}/reviews`}>Reviews</Link> {/* Mutlak yol */}
-          </li>
-        </ul>
+        <div className={styles.buttonGroup}>
+          <Link to={`/movies/${movieId}/cast`} className={styles.button}>
+            Cast
+          </Link>
+          <Link to={`/movies/${movieId}/reviews`} className={styles.button}>
+            Reviews
+          </Link>
+        </div>
       </div>
       <Outlet />
     </div>
